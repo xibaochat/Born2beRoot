@@ -4,11 +4,12 @@ RED="\033[31m"
 GREEN="\033[32m"
 NC="\033[0m"
 
-broadcast() {
-	NOW=$(date +%c)
-	echo -n -e "Broadcast message from ${GREEN}$USER${NC}"
-	echo " ($NOW)"| tr [:lower:] [:upper:]
-}
+
+### broadcast() {
+### 	NOW=$(date +%c)
+### 	echo -n -e "Broadcast message from ${GREEN}$USER${NC}"
+### 	echo " ($NOW)"| tr [:lower:] [:upper:]
+### }
 
 Architecture_and_kernel() {
 	Architecture=$(uname -i)
@@ -47,9 +48,11 @@ cpu_load() {
 }
 
 last_reboot() {
-	last_reboot=$(uptime | perl -ne '/.*up +(?:(\d+) days?,? +)?(\d+):(\d+),.*/; $total=((($1*24+$2)*60+$3)*60);
-$now=time(); $now-=		 $total; $now=localtime($now); print $now,"\n";')
+	last_reboot=$(who -b | awk '{print $3 " " $4}')
+# 	last_reboot=$(uptime | perl -ne '/.*up +(?:(\d+) days?,? +)?(\d+):(\d+),.*/; $total=((($1*24+$2)*60+$3)*60);
+# $now=time(); $now-=		 $total; $now=localtime($now); print $now,"\n";')
 
+	# 	echo -e "    #${GREEN}[Last boot]${NC}: $last_reboot"
 	echo -e "    #${GREEN}[Last boot]${NC}: $last_reboot"
 
 	echo -e "    #${GREEN}[LVM use]${NC}: DID NOT KNOW YET"
@@ -79,7 +82,6 @@ nb_sudo() {
 }
 
 
-broadcast
 Architecture_and_kernel
 cpu_physcial
 vcpu

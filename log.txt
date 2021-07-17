@@ -1,0 +1,16 @@
+
+    #[32m[Architecture][0m: x86_64 
+     [32m[kernel version][0m: #66~20.04.1-Ubuntu SMP Thu Jun 17 11:14:10 UTC 2021 
+     [32m[more detail][0m: Linux baobe-ThinkPad-T480s 5.8.0-59-generic #66~20.04.1-Ubuntu SMP Thu Jun 17 11:14:10 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+    #[32m[CPU physical][0m: 1
+    #[32m[vCPU][0m: 8
+    #[32m[Memory Usage][0m: 2972/23815MB (12%)
+    #[32m[Disk Usage][0m: 64,4529/469,726Gb (13%)
+    #[32m[CPU load][0m: 17,2%
+    #[32m[Last boot][0m: 2021-07-14 00:24
+    #[32m[LVM use][0m: DID NOT KNOW YET
+    #[32m[Connexions TCP][0m: 4 ESTABLISHED
+    #[32m[User log][0m: 2 baobe
+baobe
+    #[32m[Network] IP[0m: 192.168.0.16 (7c:2a:31:e5:e9:53)
+    #[32m[Sudo][0m: 106 cmd
