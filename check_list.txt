@@ -1,14 +1,23 @@
-meilv password: Lovemyshell000 Lovelvlv111
-my password: Lovemyshell000 Lovemaobe111
-root: Chatboss111 Iamtheboss000
+meilv:Lovemyshell000 Lovelvlv111
+my password: Lovemaobe111 Lovemyshell000
+root: Iamtheboss0 Chatboss111
 	  Wangxin0(wrong code test)
-
+	  xinwan+old_pw     X
+	  xinwang+old_pw    Y
 
 [check_xinwang_in_user42_sudo_group]
 :
 grep user42 /etc/group
 grep sudo  /etc/group
 groups xinwang
+id xinwang
+
+[UFW]
+sudo ufw verbose
+sudo ufw status
+
+[hostname]
+sudo hostname NEW_NAME
 
 [check_user_expiraction]
 chage -l username
@@ -31,11 +40,25 @@ name=$(getent passwd | grep /bin/bash | cut -d ':' -f 1)
 nb_name=$(getent passwd | grep /bin/bash | wc -l)
 list=$(getent passwd | grep /bin/bash | cut -d ':' -f 1 | awk 'NR == 1{o = "['\''" $1 "'\''"}NR > 1{o = o ", '\''" $1 "'\''"}END{o = o "]"; print o}')
 
+[sudo conf] sudo visudo
+sudo cat /etc/sudoers
+1. attemps 3 times: par defaut, it is 3.
+2. custom message
+3.input && output : /var/log/sudo/sudo.log
+4.tty(teletype, machine a ecrire) enable: by default, it is enabled. it prevent different users connect same ssh from disturbing each other.  it also helps crash situation.
+5.sudo PATH: sudo cat /etc/sudoers
 
+https://www.tecmint.com/sudoers-configurations-for-setting-sudo-in-linux/
 
+https://support.site24x7.com/portal/en/kb/articles/how-is-cpu-utilization-calculated-for-a-linux-server-monitor
 
 
 [add user]
 sudo adduser username
+[add user to a group]
+sudo usermod -a -G GROUP_NAME USERNAME
 [delete user]
 sudo userdel -rf username
+
+
+Apparmor is a security framework that prevents applications from turning evil. For example: If I run Firefox and visit a bad site that tries to install malware that will delete my home folder, Apparmor has limits on Firefox though preventing it from doing anything I don't want (like accessing my music, documents, etc). This way even if your application is compromised, no harm can be done.
