@@ -1,7 +1,7 @@
 <h1 align="center">
    <b font size="15" face="arial" ><br><br>Born2beRoot</font></b></h1>
    <p align="center">
-  The objective of this project is to set up a server on a Virtual Machine from scatch. The student needs to choose an operating system from the most two well-known Linux-based OS and then install services to build a fully functional and stricted-ruled system
+  The objective of this project is to set up a server on a Virtual Machine from scatch. The student needs to choose an operating system from the most two well-known Linux-based OS and then install services to build a fully functional and stricted-ruled system.
   At the end of this project we should be fully comfortable with the concept of Virtualization, as well as dealing with command-line based systems, partitioning memory with LVM, setting up SSH ports, MACs, Firewalls, among many other important concepts. As the name of the project suggests: we come to realize that we are, indeed, born to be root.
   </p>
   
